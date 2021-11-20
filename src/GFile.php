@@ -4,7 +4,9 @@ namespace MakechTec\ImageConverter;
 trait GFile {
 
     public function readContent() : String {
-        return $this->fread($this->getSize());
+        $raw = $this->fread($this->getSize());
+        $this->rewind();
+        return $raw;
     }
 
     public function base64Content(){
@@ -13,5 +15,6 @@ trait GFile {
 
     public abstract function fread(int $size);
     public abstract function getSize();
+    public abstract function rewind();
 
 }
