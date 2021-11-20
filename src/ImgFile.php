@@ -32,8 +32,14 @@ class ImgFile extends SplFileObject {
         echo($this->readContent());
     }
 
-    public static function createFileFromString( String $content ) : String {
-        $name = self::uniqueName();
+    public static function createFileFromString( String $content, String $destinationFilename = '' ) : String {
+        if(empty($destinationFilename)){
+            $name = self::uniqueName();
+        }
+        else{
+            $name = $destinationFilename;
+        }
+
         $imgFile = new self($name, 'w+');
         $imgFile->fwrite($content);
 

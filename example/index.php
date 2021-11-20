@@ -10,7 +10,7 @@ $name = __DIR__ . '/img/p.png';
 $image = new ImgFile($name);
 $webpConverter = new Webp();
 
-$result = $webpConverter->convert($image->readContent())
+$result = $webpConverter->convertRaw($image->readContent())
 ;
 
 header('Content-Type: image/webp');
