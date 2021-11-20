@@ -1,0 +1,19 @@
+{
+    "name":"makechtec/image-converter",
+    "type": "library",
+    "license": "MIT",
+    "description": "Convert any image type to webp version unless .ico",
+    "keywords": [
+        "image",
+        "converter",
+        "webp"
+    ],
+    "autoload": {
+        "psr-4": {
+            "MakechTec\\ImageConverter\\": "src"
+        }
+    },
+    "require":{
+        "ext-gd": "*"
+    }
+}
